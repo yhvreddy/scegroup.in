@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 if($_SERVER['SERVER_NAME'] == 'localhost'){
 	$SERVER_NAME	=	'localhost';
-	$DATABASE 		=	'';
+	$DATABASE 		=	'projects_scegroup';
 	$USERNAME 		=	'root';
 	$PASSWORD 		=	'';
 }else{

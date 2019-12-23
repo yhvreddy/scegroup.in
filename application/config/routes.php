@@ -52,3 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'WebsiteController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
+//Admin Panel Links
+$route['admin']                 =   'admin/AdminController/index';
+$route['admin/loginaccess']     =   'admin/AdminController/loginAccess';

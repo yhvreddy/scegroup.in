@@ -28,7 +28,8 @@ class AdminController extends DefaultController
     * */
     public function loginAccess()
     {
-        $lo
+        $this->print_r($_POST);
+        
     }
 
 }

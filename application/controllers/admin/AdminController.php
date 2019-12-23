@@ -10,7 +10,7 @@ class AdminController extends DefaultController
 	public function __construct()
 	{
         parent::__construct();
-		$this->admin = $this->load->model('admin/AdminModel');
+		$this->load->model('admin/AdminModel');
 	}
 
 
@@ -28,8 +28,34 @@ class AdminController extends DefaultController
     * */
     public function loginAccess()
     {
-        $this->print_r($_POST);
-        
+        $responce = $this->AdminModel->userLoginAccess($_REQUEST);
+        if($responce['responce'] != 0){
+            $this->session->set_flashdata('failed', $responce['message']);
+			redirect(base_url('admin'));
+        }else{
+            $this->session->set_userdata('loginAdminData',$responce['data']);
+            $this->session->set_userdata('isLoginAdmin',TRUE);
+            $this->session->set_flashdata('success', 'Login success..!');
+            redirect(base_url('admin/dashboard'));
+        }
+    }
+
+    /*
+    *   Welcome Dashboard access
+    * */
+    public function welcomePage(){
+        $this->isAdminLoggedIn();
+        $data['userdata']   =   $this->session->userdata('loginAdminData');
+		$data['pagetitle']	=	'Dashboard Page';
+		$this->load->view('admin/dashboard',$data);
+	}
+
+    /*
+    *   Logout access
+    * */
+    function logoutAccess() {
+        $this->session->sess_destroy();
+        redirect(base_url('admin'));
     }
 
 }

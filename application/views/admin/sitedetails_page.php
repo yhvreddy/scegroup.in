@@ -1,3 +1,4 @@
+<?php include 'header.php'; ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -25,7 +26,7 @@
             <!-- /.box-header -->
             <!-- form start -->
             <?php if(isset($sitedetails) && count($sitedetails) != 0){ ?>
-                <form role="form" method="post" action="<?=base_url('admin/saveeditsitedetails')?>" enctype="multipart/form-data">
+                <form role="form" method="post" action="<?=base_url('admin/saveditsitedetails')?>" enctype="multipart/form-data">
                   <input type="hidden" name="edit_id" value="<?=$sitedetails[0]->id?>">
                   <div class="box-body">
                     <div class="form-group col-md-3">
@@ -39,9 +40,15 @@
                     </div>
 
                     <div class="form-group col-md-3">
-                      <label for="exampleInputFile">Upload Logo </label>
-                      <input type="file" id="exampleInputFile" name="SiteLogo" accept=".png">
-                      <input type="hidden" name="Uploaded_image" value="<?=$sitedetails[0]->site_logo?>">
+                      <label for="exampleInputFile">Upload Logo </label> <?php if(!empty($sitedetails[0]->site_logo)){ ?> <a href="<?=base_url($sitedetails[0]->site_logo)?>" target="_blank" class="pull-right">Upload Image</a> <?php } ?>
+                      <input type="file" id="exampleInputFile" class="form-control" name="SiteLogo" accept=".png">
+                      <input type="hidden" name="Uploadedlogo_image" value="<?=$sitedetails[0]->site_logo?>">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                      <label for="exampleInputFile">Upload Fav Icon </label> <?php if(!empty($sitedetails[0]->site_favicon)){ ?> <a href="<?=base_url($sitedetails[0]->site_favicon)?>" target="_blank" class="pull-right"> Upload Image </a> <?php } ?>
+                      <input type="file" id="exampleInputFile" class="form-control" name="SiteFavLogo" accept=".png">
+                      <input type="hidden" name="Uploadedfav_image" value="<?=$sitedetails[0]->site_favicon?>">
                     </div>
 
                     <div class="form-group col-md-3">
@@ -113,7 +120,12 @@
 
                     <div class="form-group col-md-3">
                       <label for="exampleInputFile">Upload Logo </label>
-                      <input type="file" id="exampleInputFile" name="SiteLogo" accept=".png">
+                      <input type="file" id="exampleInputFile" class="form-control" name="SiteLogo" accept=".png">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                      <label for="exampleInputFile">Upload Fav Icon </label>
+                      <input type="file" id="exampleInputFile" class="form-control" name="SiteFavLogo" accept=".png">
                     </div>
 
                     <div class="form-group col-md-3">
@@ -182,3 +194,4 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<?php include 'footer.php'; ?>

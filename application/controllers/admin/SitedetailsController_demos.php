@@ -1,23 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require APPPATH . '/libraries/BaseController.php';
-class Sitedetails extends BaseController {
+require APPPATH.'controllers/DefaultController.php';
+class SitedetailsController extends DefaultController{
 
 	public function __construct(){
         parent::__construct();
         $this->isAdminLoggedIn();
-        $this->load->model('Model_default');
+        $this->load->model('admin/SitedetailsModel');
     }
 	
 	//about page
-	public function aboutus(){
+    public function aboutus()
+    {
         $data['userdata']   =   $this->session->userdata('loginadmindata');
         $data['pagetitle']	=	'About us page';
-        $data['aboutus']	=	 $this->Model_default->select_data('ss_about_us',array('status'=>1),'updated DESC');
-		$this->view('admin/aboutus_page',$data);
+        $data['aboutus']	=	 $this->SitedetailsModel->select_data('ss_about_us',array('status'=>1),'updated DESC');
+		$this->load->view('admin/aboutus_page',$data);
 	}
 
-    public function uploadAboutusDetails(){
+    public function uploadAboutusDetails()
+    {
         extract($_REQUEST);
         $path = 'uploads/aboutus/';
         if(file_exists($path)){
@@ -43,7 +45,8 @@ class Sitedetails extends BaseController {
         }
     }
 
-    public function uploadEditsAboutusDetails(){
+    public function uploadEditsAboutusDetails()
+    {
         extract($_REQUEST);
         // $this->print_r($_REQUEST);
         // $this->print_r($_FILES);
@@ -82,14 +85,16 @@ class Sitedetails extends BaseController {
 
 
     //sitedetails
-    public function sitedetails(){
+    public function siteDetails()
+    {
         $data['userdata']   =   $this->session->userdata('loginadmindata');
         $data['pagetitle']	=	'About us page';
         $data['sitedetails']=	 $this->Model_default->select_data('ss_site_details',array('status'=>1),'updated DESC');
         $this->view('admin/sitedetails_page',$data);
     }
 
-    public function saveSiteDetails(){
+    public function saveSiteDetails()
+    {
         extract($_REQUEST);
         // $this->print_r($_REQUEST);
         // $this->print_r($_FILES);
@@ -119,7 +124,8 @@ class Sitedetails extends BaseController {
         }
     }
 
-    public function saveEditSiteDetails(){
+    public function saveEditSiteDetails()
+    {
         extract($_REQUEST);
         // $this->print_r($_REQUEST);
         // $this->print_r($_FILES);
@@ -158,14 +164,16 @@ class Sitedetails extends BaseController {
     }
 
     //partners
-    public function partners(){
+    public function partners()
+    {
         $data['userdata']   =   $this->session->userdata('loginadmindata');
         $data['pagetitle']	=	'About us page';
         $data['partners']	=	 $this->Model_default->select_data('ss_partners_details',array('status'=>1),'updated DESC');
         $this->view('admin/partners_page',$data);
     }
 
-    public function SavepartnersDetails(){
+    public function SavepartnersDetails()
+    {
         extract($_REQUEST);
         // $this->print_r($_FILES);
         // $this->print_r($_REQUEST);
@@ -195,14 +203,16 @@ class Sitedetails extends BaseController {
     }
 
     //why choose us
-    public function Whychooseus(){
+    public function Whychooseus()
+    {
         $data['userdata']   =   $this->session->userdata('loginadmindata');
         $data['pagetitle']	=	'why choose us page';
         $data['choosedata']	=	 $this->Model_default->select_data('ss_whychoose_us',array('status'=>1),'updated DESC');
         $this->view('admin/whychooseus_page',$data);
     }
 
-    public function uploadWhychooseusDetails(){
+    public function uploadWhychooseusDetails()
+    {
         extract($_REQUEST);
         // $this->print_r($_REQUEST);
         // $this->print_r($_FILES);
@@ -233,7 +243,8 @@ class Sitedetails extends BaseController {
 
 
     //client reviews
-    public function Clientreviews(){
+    public function Clientreviews()
+    {
         $data['userdata']   =   $this->session->userdata('loginadmindata');
         $data['pagetitle']	=	'why choose us page';
         $data['banners']	=	 $this->Model_default->select_data('ss_gallery',array('status'=>1),'updated DESC');
@@ -241,7 +252,8 @@ class Sitedetails extends BaseController {
     }
 
 
-    public function uplaodBanners(){
+    public function uplaodBanners()
+    {
         extract($_REQUEST);
         $path = 'uploads/banners/';
         if(file_exists($path)){
@@ -267,7 +279,8 @@ class Sitedetails extends BaseController {
         }
     }
 
-    public function deleteBanners(){
+    public function deleteBanners()
+    {
         $id = $this->uri->segment(4);
         if(isset($id) && !empty($id)){
             $conduction = 	array('id'=>$id);
@@ -286,7 +299,8 @@ class Sitedetails extends BaseController {
         }
     }
 
-    public function editBanners(){
+    public function editBanners()
+    {
         $id = $this->uri->segment(4);
         $data['userdata'] = $this->session->userdata('loginuserdata');
         $data['pagetitle']	=	'Banners Page';
@@ -295,7 +309,8 @@ class Sitedetails extends BaseController {
         $this->manualLoadView('cpanel/header','cpanel/banners_page','cpanel/footer',$data);
     }
 
-    public function saveEditdetails(){
+    public function saveEditdetails()
+    {
         extract($_REQUEST);
         $path = 'uploads/banners/';
         if(!empty($_FILES['BannersImages']['name'])){

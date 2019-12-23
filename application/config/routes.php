@@ -53,7 +53,18 @@ $route['default_controller'] = 'WebsiteController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+//Site Links
+$route['aboutus']                       =   'WebsiteController/aboutusPage';
+$route['services']                      =   'WebsiteController/servicesPage';
+$route['projects']                      =   'WebsiteController/projectsPage';
+$route['contactus']                     =   'WebsiteController/contactusPage';
 
 //Admin Panel Links
-$route['admin']                 =   'admin/AdminController/index';
-$route['admin/loginaccess']     =   'admin/AdminController/loginAccess';
+$route['admin']                         =   'admin/AdminController/index';
+$route['admin/loginaccess']             =   'admin/AdminController/loginAccess';
+$route['admin/dashboard']               =   'admin/AdminController/welcomePage';
+$route['admin/logoutaccess']            =   'admin/AdminController/logoutAccess';
+
+$route['admin/sitedetails']             =   'admin/SitedetailsController/siteDetails';
+$route['admin/savesitedetails']         =   'admin/SitedetailsController/saveSiteDetails';
+$route['admin/saveditsitedetails']      =   'admin/SitedetailsController/savEditsiteDetails';

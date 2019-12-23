@@ -7,18 +7,18 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrcpanel_ap 3.3.7 -->
-  <link rel="stylesheet" href="<?=base_url()?>cpanel_assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/admin/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awcpanel_esome -->
-  <link rel="stylesheet" href="<?=base_url()?>cpanel_assets/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/admin/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ioniccpanel_ons -->
-  <link rel="stylesheet" href="<?=base_url()?>cpanel_assets/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/admin/bower_components/Ionicons/css/ionicons.min.css">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="<?=base_url()?>cpanel_assets/bower_components/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/admin/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?=base_url()?>cpanel_assets/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/admin/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="<?=base_url()?>cpanel_assets/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/admin/dist/css/skins/_all-skins.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,7 +37,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="<?=base_url('cpanel/dashboard')?>" class="logo">
+    <a href="<?=base_url('admin/dashboard')?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>DB</span>
       <!-- logo for regular state and mobile devices -->
@@ -70,11 +70,8 @@
                   <small><?=$userdata[0]->mail_id?></small>
                 </p>
                 <div style="padding: 40px 0px 0px 0px">
-                  <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                  </div>
-                  <div class="pull-right">
-                    <a href="<?=base_url('admin/logout')?>" class="btn btn-default btn-flat">Sign out</a>
+                  <div class="text-center">
+                    <a href="<?=base_url('admin/logoutaccess')?>" class="btn btn-default btn-flat">Sign out</a>
                   </div>
                 </div>
               </li>

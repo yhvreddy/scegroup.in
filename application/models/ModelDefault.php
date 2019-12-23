@@ -6,6 +6,13 @@ class ModelDefault extends CI_Model{
         parent::__construct();
     }
 
+    public function print_r($data)
+    {
+		echo "<pre>";
+		print_r($data);
+		echo "</pre>";
+    }
+
     //insert new data to table
     public function insert_data($tablename,$insertdata){
         $this->db->insert($tablename,$insertdata);

@@ -4,7 +4,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class DefaultController extends CI_Controller 
 {
 
-    
+	public function __construct() {
+		parent::__construct();
+		$this->load->database();
+    }
+
+	/*
+	* Login Admin Access
+	* */
+	public function isAdminLoggedIn()
+	{
+		$isLoggedIn = $this->session->userdata('isLoginAdmin');
+		if (!isset($isLoggedIn) || $isLoggedIn != TRUE) {
+			redirect(base_url('admin'));
+		}else{
+	      	$userdata = $this->session->userdata('loginAdminData');
+			return $userdata[0];
+		}
+	}
+
+	/*
+	* Login Userdata from database
+	* */
+	public function userdata($tablename,$userid)
+	{
+		$this->db->select('*');
+		$this->db->from($tablename);
+		$this->db->where(array('id' => $userid));
+		$userdata = $this->db->get();
+		return $userdata;
+	}
 
     public function previous_page()
 	{
@@ -70,16 +99,13 @@ class DefaultController extends CI_Controller
 	}
       
     //creating Directory
-	public function createdir($fileorfolderpath)
+	public function create_dir($fileorfolderpath)
 	{
 		if(!is_dir($fileorfolderpath)){
-            if(mkdir($fileorfolderpath, 0777, true)){
-                return TRUE;
-            }else{
-                  return FALSE;
-            }
+            mkdir($fileorfolderpath, 0777, true);
+            return TRUE;
 		}else{
-              return TRUE;
+            return TRUE;
 		}
 	}
 
@@ -97,7 +123,7 @@ class DefaultController extends CI_Controller
         
         if(!$this->upload->do_upload($uploadfile)) {
             $report = $this->upload->display_errors();
-            $uploaddata = array('status'=>0,'upload'=>'failed','uploaddata'=>$report);
+            $uploaddata = array('status'=>0,'upload'=>'failed','uploaddata'=>'','report'=>$report);
             return $uploaddata;
         }else{
             if($width != '' && $height != ''){
@@ -111,8 +137,9 @@ class DefaultController extends CI_Controller
                 $this->load->library('image_lib', $upload_config);
                 $this->image_lib->resize();
             }
-            $fileData = $this->upload->data();
-            $uploaddata = array('status'=>1,'upload'=>'success','uploaddata'=>$fileData);
+			$fileData = $this->upload->data();
+			$uploadfile = $uploadpath.$fileData['file_name'];
+            $uploaddata = array('status'=>1,'upload'=>'success','uploaddata'=>$uploadfile);
             return $uploaddata;
         }
    	}

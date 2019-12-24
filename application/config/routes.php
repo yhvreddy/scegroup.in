@@ -68,3 +68,9 @@ $route['admin/logoutaccess']            =   'admin/AdminController/logoutAccess'
 $route['admin/sitedetails']             =   'admin/SitedetailsController/siteDetails';
 $route['admin/savesitedetails']         =   'admin/SitedetailsController/saveSiteDetails';
 $route['admin/saveditsitedetails']      =   'admin/SitedetailsController/savEditsiteDetails';
+
+$route['admin/banners']                 =   'admin/BannerController/index';
+$route['admin/banners/uplaod']          =   'admin/BannerController/uplaodBanners';
+$route['admin/banners/:num/delete']     =   'admin/BannerController/deleteBanners';
+$route['admin/banners/:num/edit']       =   'admin/BannerController/editBanners';
+$route['admin/banners/saveditdetails']  =   'admin/BannerController/saveEditdetails';

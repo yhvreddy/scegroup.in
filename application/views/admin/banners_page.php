@@ -1,3 +1,4 @@
+<?php include 'header.php'; ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -25,7 +26,7 @@
             <!-- /.box-header -->
             <!-- form start -->
             <?php if(isset($bannerdetails) && count($bannerdetails) != 0){ ?>
-                <form role="form" method="post" action="<?=base_url('admin/dashboard/banners/saveEditdetails')?>" enctype="multipart/form-data">
+                <form role="form" method="post" action="<?=base_url('admin/banners/saveditdetails')?>" enctype="multipart/form-data">
                   <input type="hidden" name="edit_id" value="<?=$bannerdetails[0]->id?>">
                   <div class="box-body">
                     <div class="form-group">
@@ -35,7 +36,6 @@
                     <div class="form-group">
                       <label for="exampleInputFile">Upload Banner <span class="text-danger">*</span></label>
                       <input type="file" id="exampleInputFile" name="BannersImages" accept=".png,.jpg,.jpeg">
-
                       <p class="help-block">Upload Banner images (.png,.jpg,.jpeg) formats only.</p>
                       <?php if(!empty($bannerdetails[0]->image)){ ?>
                         <b>Uploaded Image preview</b>
@@ -59,7 +59,7 @@
                   </div>
                 </form>
             <?php }else{ ?>
-                <form role="form" method="post" action="<?=base_url('admin/dashboard/banners/uplaod')?>" enctype="multipart/form-data">
+                <form role="form" method="post" action="<?=base_url('admin/banners/uplaod')?>" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="bannerTitle">Banner Title</label>
@@ -98,31 +98,31 @@
             <div class="box-header with-border">
               <h3 class="box-title">Banners List</h3>
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <table class="table table-striped table-bordered">
-              <thead>
-                <th>#</th>
-                <th>Banner Title</th>
-                <th>Banner Image</th>
-                <th>Information</th>
-                <th></th>
-              </thead>
-              <tbody>
-                <?php $i = 1; foreach ($banners as $key => $banner) { ?>
-                  <tr>
-                    <td><?=$i++;?></td>
-                    <td><?=$banner->banner_title?></td>
-                    <td><img src="<?=base_url($banner->image)?>" style="width:100px"></td>
-                    <td><?=$banner->information?></td>
-                    <td>
-                      <a href="<?=base_url('admin/banners/'.$banner->id.'/edit')?>" onclick="return confirm('Are you sure to edit banner details..?')"><i class="fa fa-edit"></i></a>&nbsp;
-                      <a href="<?=base_url('admin/banners/'.$banner->id.'/delete')?>" onclick="return confirm('Are you sure to delete banner details..?')"><i class="fa fa-trash-o"></i></a>
-                    </td>
-                  </tr>
-                <?php } ?>
-              </tbody>
-            </table>
+            <div class="box-body">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <th>#</th>
+                  <th>Banner Title</th>
+                  <th>Banner Image</th>
+                  <th>Information</th>
+                  <th></th>
+                </thead>
+                <tbody>
+                  <?php $i = 1; foreach ($banners as $key => $banner) { ?>
+                    <tr>
+                      <td><?=$i++;?></td>
+                      <td><?=$banner->banner_title?></td>
+                      <td><img src="<?=base_url($banner->image)?>" style="width:100px"></td>
+                      <td><?=$banner->information?></td>
+                      <td>
+                        <a href="<?=base_url('admin/banners/'.$banner->id.'/edit')?>" onclick="return confirm('Are you sure to edit banner details..?')"><i class="fa fa-edit"></i></a>&nbsp;
+                        <a href="<?=base_url('admin/banners/'.$banner->id.'/delete')?>" onclick="return confirm('Are you sure to delete banner details..?')"><i class="fa fa-trash-o"></i></a>
+                      </td>
+                    </tr>
+                  <?php } ?>
+                </tbody>
+              </table>
+            </div>
           </div>
           <!-- /.box -->
           
@@ -134,3 +134,4 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<?php include 'footer.php'; ?>

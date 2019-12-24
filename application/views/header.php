@@ -29,6 +29,11 @@
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .header_aera .navbar-header .navbar-brand {
+            padding-top: 12px !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Preloader -->

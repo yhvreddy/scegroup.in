@@ -32,19 +32,6 @@
     </section>
     <!-- End About Us Area -->
 
-    <!-- call Area -->
-    <section class="call_min_area">
-        <div class="container">
-            <h2>+880 123 456 789</h2>
-            <p>Contact With Us. We are the top Construction Company. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <div class="call_btn">
-                <a href="#" class="button_all">GET IN TOUCH</a>
-                <a href="#" class="button_all">QUICK QUOTE</a>
-            </div>
-        </div>
-    </section>
-    <!-- End call Area -->
-
     <!-- Our Features Area -->
     <section class="our_feature_area">
         <div class="container">
@@ -100,91 +87,4 @@
     </section>
     <!-- End Our Features Area -->
 
-    <!-- Our Partners Area -->
-    <section class="our_partners_area">
-        <div class="book_now_aera">
-            <div class="container">
-                <div class="row book_now">
-                    <div class="col-md-10 booking_text">
-                        <h4>Booking now if you need build your dream home.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="col-md-2 p0 book_bottun">
-                        <a href="#" class="button_all">book now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Our Partners Area -->
-
-
-    <!-- Our Team Area -->
-    <section class="our_team_area">
-        <div class="container">
-            <div class="tittle wow fadeInUp">
-                <h2>Our Team</h2>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-            </div>
-            <div class="row team_row">
-                <div class="col-md-3 col-sm-6 wow fadeInUp">
-                   <div class="team_membar">
-                        <img src="<?=base_url()?>assets/images/team/tm-1.jpg" alt="">
-                        <div class="team_content">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            </ul>
-                            <a href="#" class="name">Prodip Ghosh</a>
-                            <h6>Founder &amp; CEO</h6>
-                        </div>
-                   </div>
-                </div>
-                <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
-                   <div class="team_membar">
-                        <img src="<?=base_url()?>assets/images/team/tm-2.jpg" alt="">
-                        <div class="team_content">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            </ul>
-                            <a href="#" class="name">Emran Khan</a>
-                            <h6>Web-Developer</h6>
-                        </div>
-                   </div>
-                </div>
-                <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                   <div class="team_membar">
-                        <img src="<?=base_url()?>assets/images/team/tm-3.jpg" alt="">
-                        <div class="team_content">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            </ul>
-                            <a href="#" class="name">Prodip Ghosh</a>
-                            <h6>Founder &amp; CEO</h6>
-                        </div>
-                   </div>
-                </div>
-                <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
-                   <div class="team_membar">
-                        <img src="<?=base_url()?>assets/images/team/tm-4.jpg" alt="">
-                        <div class="team_content">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            </ul>
-                            <a href="#" class="name">Jakaria Khan</a>
-                            <h6>Founder &amp; CEO</h6>
-                        </div>
-                   </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Our Team Area -->
 <?php include 'footer.php'; ?>    

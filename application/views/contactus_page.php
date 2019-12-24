@@ -27,14 +27,12 @@
                         <div class="location_laft">
                             <a class="f_location" href="#">location</a>
                             <a href="#">phone</a>
-                            <a href="#">fax</a>
                             <a href="#">email</a>
                         </div>
                         <div class="address">
                             <a href="#">Sector # 10, Road # 05, Plot # 31, Uttara, <br> Dhaka 1230 </a>
-                            <a href="#">+880 123 456 789</a>
-                            <a href="#">(626) 935-3026</a>
-                            <a href="#">info@thethemspro.com</a>
+                            <a href="#">+91 9876543210</a>
+                            <a href="#">info@scegroup.in</a>
                         </div>
                     </div>
                 </div>
@@ -43,9 +41,9 @@
                     <form class="form-inline contact_box">
                         <input type="text" class="form-control input_box" placeholder="First Name *">
                         <input type="text" class="form-control input_box" placeholder="Last Name *">
+                        <input type="tel" maxlength="10" class="form-control input_box" placeholder="Your Mobile">
                         <input type="text" class="form-control input_box" placeholder="Your Email *">
                         <input type="text" class="form-control input_box" placeholder="Subject">
-                        <input type="text" class="form-control input_box" placeholder="Your Website">
                         <textarea class="form-control input_box" placeholder="Message"></textarea>
                         <button type="submit" class="btn btn-default">Send Message</button>
                     </form>
